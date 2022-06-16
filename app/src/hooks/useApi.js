@@ -37,13 +37,14 @@ const apiClient = axios.create({
 
 
 const getIntensity = (from, to) => apiClient.get("/intensity/" + from + "/" + to);
-
 const getGenerationMix = (region) => apiClient.get("/regional/regionid/" + region);
 
-export default {
+
+const Api = {
     useApi,
     getIntensity,
     getGenerationMix
 }
+export default Api;
 
 

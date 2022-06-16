@@ -1,6 +1,9 @@
 import React from 'react';
 import { ukRegions } from '../../utils/uk';
 import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+mapboxgl.workerClass = MapboxWorker;
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29raWVkYW5za2kiLCJhIjoiY2w0ZGg5NW1kMDhmbjNsb2J4M2l3dzIxMSJ9.1oZwXd1fHXP9-HOD-ouBoA';
 
@@ -24,8 +27,6 @@ const drawMap = (map, mapContainer, setter) => {
     });
 
     map.current.once('load', () => {
-
-        let hoveredStateId = null;
 
         map.current.addSource('states', {
             'type': 'geojson',
