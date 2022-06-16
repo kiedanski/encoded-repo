@@ -1,12 +1,15 @@
 import React from 'react';
 import Api from './../hooks/useApi';
 import HourSelector from '../components/hourSelector/hourSelector';
+import LineChart from '../components/lineChart/LineChart';
+import * as d3 from 'd3';
 
 const preprocessData = (rawData) => {
 
+    const parseDate = d3.utcParse('%Y-%m-%dT%H:%MZ')
     let formattedData = [];
     rawData["data"].forEach((d, i) => {
-        let time = d["from"];
+        let time = parseDate(d["to"]);
         formattedData.push({
             "time": time,
             "value": d["intensity"]["actual"],
@@ -70,12 +73,7 @@ function IntensityForecast() {
 
             {getIntensityData.loading && <h1>Loading</h1>}
             {getIntensityData.error && <h1>{getIntensityData.error}</h1>}
-            {getIntensityData.data &&
-                getIntensityData.data.map((e, i) => (
-                    <h2 key={i}>{e["time"]} {e["value"]}</h2>
-                ))
-
-            }
+            {getIntensityData.data && !getIntensityData.loading && <LineChart name="intensity-forecast" data={getIntensityData.data} />}
         </div>
     )
 }
