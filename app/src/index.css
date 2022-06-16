@@ -1,4 +1,12 @@
-.map-container {
-    height: 500px;
-    width: 500px;
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url(./assets/fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+}
+
+html {
+    font-family: Montserrat;
+}
+
+.links {
+    
 }

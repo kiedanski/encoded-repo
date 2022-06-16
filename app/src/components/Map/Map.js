@@ -1,13 +1,11 @@
-import React from 'react';
-import { ukRegions } from '../../utils/uk';
+import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+
+import { ukRegions } from '../../utils/uk';
 mapboxgl.workerClass = MapboxWorker;
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29raWVkYW5za2kiLCJhIjoiY2w0ZGg5NW1kMDhmbjNsb2J4M2l3dzIxMSJ9.1oZwXd1fHXP9-HOD-ouBoA';
-
-
+mapboxgl.accessToken = "pk.eyJ1IjoiZGllZ29raWVkYW5za2kiLCJhIjoiY2w0ZGg5NW1kMDhmbjNsb2J4M2l3dzIxMSJ9.1oZwXd1fHXP9-HOD-ouBoA"
 const initalCoordinates = {
     "lat": 54,
     "lon": -5,
@@ -81,18 +79,19 @@ const drawMap = (map, mapContainer, setter) => {
 }
 
 
-function Map(props) {
+const Map = ({ setter }) => {
 
-    const mapContainer = React.useRef(null);
-    const map = React.useRef(null);
+    const mapContainer = useRef();
+    const map = useRef();
 
-    React.useEffect(() => {
-        drawMap(map, mapContainer, props.setter);
-    })
+    useEffect(() => {
+        drawMap(map, mapContainer, setter);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div ref={mapContainer} className="map-container" />
-    )
+    );
 
 }
 
