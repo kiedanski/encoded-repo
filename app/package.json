@@ -1,5 +1,6 @@
 {
   "name": "app",
+  "homepage": "https://kiedanski.github.io/encoded-project/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
