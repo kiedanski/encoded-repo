@@ -11,3 +11,7 @@ The website has been deployed using Github Pages and it is available [here](http
 * Mapbox
 * Docker
 * Github Actions / Github Pages
+
+## More experiments
+
+An additional analysis into the correlation of the generation mix and the carbon intensity forecast error is available via a Jupyter Notebook [here](https://colab.research.google.com/drive/1ZKxyFA6hOaVd4AZCK4t9xbhjxXHXBGCA?usp=sharing).
