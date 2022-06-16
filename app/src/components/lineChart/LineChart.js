@@ -34,7 +34,7 @@ const plotLineChart = (params, ref) => {
         .domain(d3.extent(data, function (d) { return d.time }))
         .range([0, width])
 
-    const xAxis = svg.append('g')
+    svg.append('g')
         .attr('transform', 'translate(0,' + height + ')')
         .call(d3.axisBottom(x));
 
@@ -44,7 +44,7 @@ const plotLineChart = (params, ref) => {
         .domain([min, max])
         .range([height, 0])
 
-    const yAxis = svg.append('g')
+    svg.append('g')
         .call(d3.axisLeft(y));
 
     // List of colors to be used
@@ -122,6 +122,8 @@ const plotLineChart = (params, ref) => {
             .attr("cy", i * 25) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 7)
             .style("fill", function (d) { return color(k) })
+
+        return null;
 
     })
 

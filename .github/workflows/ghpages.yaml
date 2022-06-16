@@ -26,7 +26,7 @@ jobs:
       run: cd app && npm ci
     
     - name: Build project
-      run: cd app && npm run build
+      run: CI=false cd app && npm run build
     
 
     - name: Upload production-ready build files

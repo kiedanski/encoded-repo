@@ -20,6 +20,8 @@ function GenerationMix() {
     React.useEffect(() => {
         const regionToNum = regionList[region];
         getGenerationData.request(regionToNum);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [region]);
 
     return (

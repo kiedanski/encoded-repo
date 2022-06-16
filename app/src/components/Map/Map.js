@@ -25,8 +25,6 @@ const drawMap = (map, mapContainer, setter) => {
 
     map.current.once('load', () => {
 
-        let hoveredStateId = null;
-
         map.current.addSource('states', {
             'type': 'geojson',
             'data': ukRegions

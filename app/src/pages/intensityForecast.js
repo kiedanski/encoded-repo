@@ -52,7 +52,7 @@ const getRange = (hoursBack, hoursForward) => {
 
 function IntensityForecast() {
 
-    const [hoursBack, setHoursBack] = React.useState(1);
+    const [hoursBack, setHoursBack] = React.useState(3);
     const [hoursForward, setHoursForward] = React.useState(1);
     const getIntensityData = Api.useApi(Api.getIntensity, preprocessData);
 
@@ -60,6 +60,7 @@ function IntensityForecast() {
         const dateStr = getRange(hoursBack, hoursForward);
         getIntensityData.request(dateStr.pastStr, dateStr.nextStr);
 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [hoursBack, hoursForward]);
     return (
         <div>
