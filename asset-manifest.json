@@ -1,11 +1,15 @@
 {
   "files": {
-    "main.js": "/encoded-repo/static/js/main.7cb551e6.js",
+    "main.css": "/encoded-repo/static/css/main.5d3c076f.css",
+    "main.js": "/encoded-repo/static/js/main.0509bd25.js",
     "static/js/mapbox-gl-csp-worker.1a4bd84e.worker.js": "/encoded-repo/static/js/mapbox-gl-csp-worker.1a4bd84e.worker.js",
+    "static/media/Montserrat-Regular.ttf": "/encoded-repo/static/media/Montserrat-Regular.ac98a5f5ca71180fe293.ttf",
     "index.html": "/encoded-repo/index.html",
-    "main.7cb551e6.js.map": "/encoded-repo/static/js/main.7cb551e6.js.map"
+    "main.5d3c076f.css.map": "/encoded-repo/static/css/main.5d3c076f.css.map",
+    "main.0509bd25.js.map": "/encoded-repo/static/js/main.0509bd25.js.map"
   },
   "entrypoints": [
-    "static/js/main.7cb551e6.js"
+    "static/css/main.5d3c076f.css",
+    "static/js/main.0509bd25.js"
   ]
 }
