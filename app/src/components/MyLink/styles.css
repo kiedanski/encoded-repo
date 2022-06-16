@@ -1,0 +1,13 @@
+.my-link {
+    text-decoration: none;
+    padding: 10px;
+    font-size: large;
+}
+
+.my-link:visited {
+    color: unset;
+}
+
+.my-link:hover {
+    opacity: 0.8;
+}

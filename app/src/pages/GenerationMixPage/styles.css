@@ -1,0 +1,29 @@
+.generation-mix {
+    display: flex;
+}
+
+.mapboxgl-canvas {
+    height: auto;
+    width: 100% !important;
+}
+
+.map-container {
+    flex: 1;
+}
+
+.mix-values {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.mapboxgl-control-container {
+    display: none;
+}
+
+.mix-values-container {
+    display: flex;
+}
+
+.fuel-names {
+    margin-right: 50px;
+}

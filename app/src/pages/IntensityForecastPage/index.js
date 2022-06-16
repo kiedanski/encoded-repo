@@ -1,8 +1,12 @@
 import React from 'react';
-import Api from './../hooks/useApi';
-import HourSelector from '../components/hourSelector/hourSelector';
-import LineChart from '../components/lineChart/LineChart';
 import * as d3 from 'd3';
+
+import Api from './../../hooks/useApi';
+import HourSelector from '../../components/hourSelector/hourSelector';
+import LineChart from '../../components/lineChart/LineChart';
+import { getRange } from '../../utils/helpers';
+
+import './styles.css'
 
 const preprocessData = (rawData) => {
 
@@ -22,35 +26,11 @@ const preprocessData = (rawData) => {
         });
 
     })
-    console.log(formattedData)
     return formattedData;
 }
 
 
-const getRange = (hoursBack, hoursForward) => {
-    let now = new Date();
-    const msToHour = 60 * 60 * 1000;
-
-    let past = new Date(now.getTime() - hoursBack * msToHour);
-    let next = new Date(now.getTime() + hoursForward * msToHour);
-
-    let nowStr = now.toISOString();
-    let pastStr = past.toISOString();
-    let nextStr = next.toISOString();
-    console.log(nowStr, pastStr, nextStr);
-
-    nowStr = nowStr.slice(0, 16) + "Z";
-    pastStr = pastStr.slice(0, 16) + "Z";
-    nextStr = nextStr.slice(0, 16) + "Z";
-
-    return {
-        nowStr,
-        nextStr,
-        pastStr,
-    }
-}
-
-function IntensityForecast() {
+function IntensityForecastPage() {
 
     const [hoursBack, setHoursBack] = React.useState(3);
     const [hoursForward, setHoursForward] = React.useState(1);
@@ -64,7 +44,8 @@ function IntensityForecast() {
     }, [hoursBack, hoursForward]);
     return (
         <div>
-            <h1> IntensityForecast </h1>
+            <h1> Intensity Forecast </h1>
+            <h3>You can change the inputs below to load more or less carbon intensity data. You can also hover over a marker to see its value</h3>
             <HourSelector
                 pastHour={hoursBack}
                 nextHour={hoursForward}
@@ -79,4 +60,4 @@ function IntensityForecast() {
     )
 }
 
-export default IntensityForecast;
+export default IntensityForecastPage;
